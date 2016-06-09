@@ -70,8 +70,7 @@ class LinearRegression implements InterfaceRegression
 				$this->sumIndex[4] += $v[1] * $v[1];
 			}
 		}
-
-		var_dump($this->sumIndex);
+		
 		$this->gradient = ($k * $this->sumIndex[3] - $this->sumIndex[0] * $this->sumIndex[1]) /
 			($k * $this->sumIndex[2] - $this->sumIndex[0] * $this->sumIndex[0]);
 		$this->intercept = ($this->sumIndex[1] / $k) - ($this->gradient * $this->sumIndex[0]) / $k;

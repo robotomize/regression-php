@@ -11,7 +11,6 @@ use Exception;
  */
 class Regression
 {
-
 	/**
 	 * @param array $data
 	 * @return RegressionModel
@@ -25,8 +24,7 @@ class Regression
 
 		return $model->getRegressionModel();
 	}
-
-
+	
 	/**
 	 * @param array $data
 	 * @return RegressionModel
