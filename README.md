@@ -36,4 +36,19 @@ Factory usage
 /** @var RegressionModel $regressionModel */
 $regressionModel = Regression::Linear([[0, 10], [1, 20], [2, 3], [3, 15], [4, 0]]);
 ```
+### Exponential regression
 
+Basic usage
+
+```php
+$exponential = new ExponentialRegression();
+$exponential->setSourceSequence($testData);
+$exponential->make();
+$regressionModel = $exponential->getRegressionModel();
+```
+
+Factory usage
+
+```php
+$regressionModel = Regression::Exponential($testData);
+```
