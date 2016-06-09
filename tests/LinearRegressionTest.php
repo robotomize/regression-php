@@ -4,12 +4,13 @@ namespace test;
 
 include __DIR__ . '/../src/autoload.php';
 
-include __DIR__ . '/../src/LinearRegression.php';
-
 use PHPUnit_Framework_TestCase;
 
-use regressor\LinearRegression;
-
+/**
+ * Class LinearRegressionTest
+ * @package test
+ * @author robotomize@gmail.com
+ */
 class LinearRegressionTest extends PHPUnit_Framework_TestCase
 {
 
@@ -54,11 +55,6 @@ class LinearRegressionTest extends PHPUnit_Framework_TestCase
 
 	public function testLinearRegression()
 	{
-		$model = new LinearRegression();
-		$model->setSequence($this->testData);
-		$model->make();
-		print $model->getEquation();
-		var_dump($model->getResultSequence());
-		//$this->assertEquals('', $model->getEquation());
+		return false;
 	}
 }
