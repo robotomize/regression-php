@@ -1,5 +1,6 @@
 <?php
 
+use regressor\ExponentialRegression;
 use regressor\LinearRegression;
 use regressor\Regression;
 use regressor\RegressionModel;
@@ -21,3 +22,10 @@ var_dump($regressionModel);
 
 /** @var RegressionModel $regressionModel */
 $regressionModel = Regression::Linear($testData);
+
+$exponential = new ExponentialRegression();
+$exponential->setSourceSequence($testData);
+$exponential->make();
+$regressionModel = $exponential->getRegressionModel();
+
+$regressionModel = Regression::Exponential($testData);

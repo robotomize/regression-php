@@ -21,10 +21,9 @@ class Regression
 		$model = new LinearRegression();
 		$model->setSourceSequence($data);
 		$model->make();
-
 		return $model->getRegressionModel();
 	}
-	
+
 	/**
 	 * @param array $data
 	 * @return RegressionModel
