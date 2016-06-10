@@ -5,7 +5,7 @@ namespace regressor;
 /**
  * Class RegressionModel
  * @package regressor
- * author robotomize@gmail.com
+ * @author robotomize@gmail.com
  */
 class RegressionModel
 {
