@@ -1,9 +1,17 @@
 ## Regression-php package
-My implementation of the regression algorithm
+
+Implementation of the regression algorithm
 
 ## Requirements
 * composer dependency (Carbon DateTime)
 * PHP7
+
+## Install
+```sh
+git clone https://github.com/robotomize/regression-php.git
+cd regression-php;
+php src/example.php
+```
 
 ### Linear regression algorithm
 
