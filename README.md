@@ -41,3 +41,19 @@ Factory usage
 ```php
 $regressionModel = Regression::Exponential($testData);
 ```
+### Logarithmic regression
+
+### Basic usage
+```php
+$logarithmic = new LogarithmicRegression();
+$logarithmic->setSourceSequence($testData);
+$logarithmic->calculate();
+
+/** @var RegressionModel $regressionModel */
+$regressionModel = $logarithmic->getRegressionModel();
+```
+
+### Factory usage
+```php
+$regressionModel = RegressionFactory::Logarithmic($testData);
+```
