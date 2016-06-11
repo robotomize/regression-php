@@ -1,6 +1,7 @@
 <?php
+declare(strict_types = 1);
 
-namespace regressor;
+namespace Regression;
 
 use Carbon\Carbon;
 use Exception;
@@ -8,12 +9,11 @@ use IllegalArgumentException;
 
 /**
  * Class LinearRegression
- * @package regressor
+ * @package Regression
  * @author robotomize@gmail.com
  */
 class LinearRegression implements InterfaceRegression
 {
-
 	/**
 	 * @var array
 	 */
@@ -50,15 +50,43 @@ class LinearRegression implements InterfaceRegression
 	private $regressionModel;
 
 	/**
-	 * @throws Exception
+	 * @var int
 	 */
-	public function make()
+	private $dimension;
+
+	/**
+	 * LinearRegression constructor.
+	 * @param array $sumIndex
+	 */
+	public function __construct()
+	{
+		$this->sumIndex = [0, 0, 0, 0, 0, 0];
+		$this->dimension = count($this->sumIndex);
+	}
+
+	private function push()
+	{
+		$this->regressionModel = new RegressionModel();
+		$this->regressionModel->setEquation($this->equation);
+		$this->regressionModel->setObjectId(bin2hex(random_bytes(10)));
+		$this->regressionModel->setResultSequence($this->resultSequence);
+		$this->regressionModel->setSourceSequence($this->sourceSequence);
+		$this->regressionModel->setCreateDate(Carbon::now()->toDateTimeString());
+	}
+
+	/**
+	 * @throws RegressionException
+	 */
+	public function calculate()
 	{
 		if ($this->sourceSequence === null) {
-			throw new Exception('The input sequence is not set');
+			throw new RegressionException('The input sequence is not set');
 		}
 
-		$this->sumIndex = [0, 0, 0, 0, 0];
+		if (count($this->sourceSequence) < $this->dimension) {
+			throw new RegressionException('The dimension of the sequence of at least ' . $this->dimension);
+		}
+
 		$k = 0;
 
 		foreach ($this->sourceSequence as $k => $v) {
@@ -84,14 +112,8 @@ class LinearRegression implements InterfaceRegression
 		}
 
 		$this->equation = 'y = ' .  round($this->gradient, 1) .  'x + ' . round($this->intercept, 1);
-		
-		$this->regressionModel = new RegressionModel();
 
-		$this->regressionModel->setEquation($this->equation);
-		$this->regressionModel->setObjectId(bin2hex(random_bytes(10)));
-		$this->regressionModel->setResultSequence($this->resultSequence);
-		$this->regressionModel->setSourceSequence($this->sourceSequence);
-		$this->regressionModel->setCreateDate(Carbon::now()->toDateTimeString());
+		$this->push();
 
 	}
 
@@ -128,7 +150,7 @@ class LinearRegression implements InterfaceRegression
 	/**
 	 * @return array
 	 */
-	public function getSourceSequence()
+	public function getSourceSequence(): array
 	{
 		return $this->sourceSequence;
 	}
@@ -136,7 +158,7 @@ class LinearRegression implements InterfaceRegression
 	/**
 	 * @return float
 	 */
-	public function getIntercept()
+	public function getIntercept(): float
 	{
 		return $this->intercept;
 	}
@@ -144,7 +166,7 @@ class LinearRegression implements InterfaceRegression
 	/**
 	 * @return float
 	 */
-	public function getGradient()
+	public function getGradient(): float
 	{
 		return $this->gradient;
 	}

@@ -1,15 +1,16 @@
 <?php
+declare(strict_types = 1);
 
-namespace regressor;
+namespace Regression;
 
 use Exception;
 
 /**
- * Class Regression
- * @package regressor
+ * Class RegressionFactory
+ * @package Regression
  * @author robotomize@gmail.com
  */
-class Regression
+class RegressionFactory
 {
 	/**
 	 * @param array $data
@@ -20,7 +21,7 @@ class Regression
 	{
 		$model = new LinearRegression();
 		$model->setSourceSequence($data);
-		$model->make();
+		$model->calculate();
 		return $model->getRegressionModel();
 	}
 
@@ -33,7 +34,7 @@ class Regression
 	{
 		$model = new ExponentialRegression();
 		$model->setSourceSequence($data);
-		$model->make();
+		$model->calculate();
 		return $model->getRegressionModel();
 	}
 }

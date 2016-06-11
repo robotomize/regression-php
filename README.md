@@ -18,17 +18,6 @@ $linear->make();
 $regressionModel = $linear->getRegressionModel();
 
 ```
-```sh
-object(regressor\RegressionModel)#4 (5) {
-    ["objectId":"regressor\RegressionModel":private]=> string
-    ["resultSequence":"regressor\RegressionModel":private]=> []
-    ...
-    ["sourceSequence":"regressor\RegressionModel":private]=> []
-    ...
-    ["equation":"regressor\RegressionModel":private]=> (string)
-    ["createDate":"regressor\RegressionModel":private]=> (string)
-}
-```
 
 Factory usage
 

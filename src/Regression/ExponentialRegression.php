@@ -1,13 +1,14 @@
 <?php
+declare(strict_types = 1);
 
-namespace regressor;
+namespace Regression;
 
 use Carbon\Carbon;
 use Exception;
 
 /**
  * Class ExponentialRegression
- * @package regressor
+ * @package Regression
  * @author robotomize@gmail.com
  */
 class ExponentialRegression implements InterfaceRegression
@@ -39,15 +40,44 @@ class ExponentialRegression implements InterfaceRegression
 	private $sumIndex = [];
 
 	/**
-	 * @throws Exception
+	 * @var int
 	 */
-	public function make()
+	private $dimension;
+
+	/**
+	 * ExponentialRegression constructor.
+	 * @param array $sumIndex
+	 */
+	public function __construct()
 	{
+		$this->sumIndex = [0, 0, 0, 0, 0, 0];
+		$this->dimension = count($this->sumIndex);
+	}
+
+	private function push()
+	{
+		$this->regressionModel = new RegressionModel();
+		$this->regressionModel->setEquation($this->equation);
+		$this->regressionModel->setObjectId(bin2hex(random_bytes(10)));
+		$this->regressionModel->setResultSequence($this->resultSequence);
+		$this->regressionModel->setSourceSequence($this->sourceSequence);
+		$this->regressionModel->setCreateDate(Carbon::now()->toDateTimeString());
+	}
+
+	/**
+	 * @throws RegressionException
+	 */
+	public function calculate()
+	{
+
 		if ($this->sourceSequence === null) {
-			throw new Exception('The input sequence is not set');
+			throw new RegressionException('The input sequence is not set');
 		}
 
-		$this->sumIndex = [0, 0, 0, 0, 0, 0];
+		if (count($this->sourceSequence) < $this->dimension) {
+			throw new RegressionException('The dimension of the sequence of at least ' . $this->dimension);
+		}
+
 		$k = 0;
 
 		foreach ($this->sourceSequence as $k => $v) {
@@ -73,14 +103,7 @@ class ExponentialRegression implements InterfaceRegression
 
 		$this->equation = 'y = ' .  round($A, 2) .  'e^(' . round($B, 2) . 'x)';
 
-		$this->regressionModel = new RegressionModel();
-
-		$this->regressionModel->setEquation($this->equation);
-		$this->regressionModel->setObjectId(bin2hex(random_bytes(10)));
-		$this->regressionModel->setResultSequence($this->resultSequence);
-		$this->regressionModel->setSourceSequence($this->sourceSequence);
-		$this->regressionModel->setCreateDate(Carbon::now()->toDateTimeString());
-		
+		$this->push();
 	}
 
 	/**

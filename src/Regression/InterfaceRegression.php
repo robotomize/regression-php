@@ -1,18 +1,16 @@
 <?php
 
-namespace regressor;
+namespace Regression;
 
 /**
  * Interface InterfaceRegression
- * @package regressor
+ * @package Regerssion
  * @author robotomize@gmail.com
  */
 interface InterfaceRegression
 {
-	/**
-	 * @return mixed
-	 */
-	public function make();
+	
+	public function calculate();
 
 	/**
 	 * @param array $data
