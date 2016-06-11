@@ -3,7 +3,6 @@ declare(strict_types = 1);
 
 namespace Regression;
 
-use Exception;
 use TypeError;
 
 /**
@@ -44,6 +43,16 @@ class RegressionFactory
 	}
 
 	/**
+	 * @param array $data
+	 * @return RegressionModel
+	 * @throws TypeError
+	 */
+	public static function Power(array $data): RegressionModel
+	{
+		return self::createContainer(PowerRegression::class, $data);
+	}
+
+	/**
 	 * @param string $className
 	 * @param array $data
 	 * @return InterfaceRegression
@@ -55,7 +64,8 @@ class RegressionFactory
 		$regressionObj = new $className();
 
 		if (!$regressionObj instanceof InterfaceRegression) {
-			throw new TypeError('the object' . $className . '  is not compatible with the interface ' . InterfaceRegression::class);
+			throw new TypeError('the object' . $className .
+				'  is not compatible with the interface ' . InterfaceRegression::class);
 		}
 
 		$regressionObj->setSourceSequence($data);

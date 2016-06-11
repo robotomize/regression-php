@@ -39,7 +39,6 @@ $exponential->calculate();
  */
 $regressionModel = $exponential->getRegressionModel();
 
-
 /**
  * Calculate logarithmic regression call calculate()
  */
@@ -52,4 +51,4 @@ $regressionModel = $logarithmic->getRegressionModel();
 
 $regressionModel = RegressionFactory::Logarithmic($testData);
 
-var_dump($regressionModel);
+var_dump(RegressionFactory::Power($testData));
