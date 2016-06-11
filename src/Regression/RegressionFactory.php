@@ -4,6 +4,7 @@ declare(strict_types = 1);
 namespace Regression;
 
 use Exception;
+use TypeError;
 
 /**
  * Class RegressionFactory
@@ -15,26 +16,50 @@ class RegressionFactory
 	/**
 	 * @param array $data
 	 * @return RegressionModel
-	 * @throws Exception
+	 * @throws TypeError
 	 */
 	public static function Linear(array $data): RegressionModel
 	{
-		$model = new LinearRegression();
-		$model->setSourceSequence($data);
-		$model->calculate();
-		return $model->getRegressionModel();
+		return self::createContainer(LinearRegression::class, $data);
 	}
 
 	/**
 	 * @param array $data
 	 * @return RegressionModel
-	 * @throws Exception
+	 * @throws TypeError
 	 */
 	public static function Exponential(array $data): RegressionModel
 	{
-		$model = new ExponentialRegression();
-		$model->setSourceSequence($data);
-		$model->calculate();
-		return $model->getRegressionModel();
+		return self::createContainer(ExponentialRegression::class, $data);
+	}
+
+	/**
+	 * @param array $data
+	 * @return RegressionModel
+	 * @throws TypeError
+	 */
+	public static function Logarithmic(array $data): RegressionModel
+	{
+		return self::createContainer(LogarithmicRegression::class, $data);
+	}
+
+	/**
+	 * @param string $className
+	 * @param array $data
+	 * @return InterfaceRegression
+	 * @throws TypeError
+	 */
+	protected static function createContainer(string $className, array $data): RegressionModel
+	{
+		/** @var InterfaceRegression $regressionObj */
+		$regressionObj = new $className();
+
+		if (!$regressionObj instanceof InterfaceRegression) {
+			throw new TypeError('the object' . $className . '  is not compatible with the interface ' . InterfaceRegression::class);
+		}
+
+		$regressionObj->setSourceSequence($data);
+		$regressionObj->calculate();
+		return $regressionObj->getRegressionModel();
 	}
 }
