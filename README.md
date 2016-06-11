@@ -57,3 +57,20 @@ $regressionModel = $logarithmic->getRegressionModel();
 ```php
 $regressionModel = RegressionFactory::Logarithmic($testData);
 ```
+
+### Power regression
+
+### Basic usage
+```php
+$powerReg = new PowerRegression();
+$powerReg->setSourceSequence($testData);
+$powerReg->calculate();
+
+/** @var RegressionModel $regressionModel */
+$regressionModel = $powerReg->getRegressionModel();
+```
+
+### Factory usage
+```php
+$regressionModel = RegressionFactory::Power($testData);
+```

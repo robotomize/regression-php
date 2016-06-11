@@ -3,6 +3,7 @@
 use Regression\ExponentialRegression;
 use Regression\LinearRegression;
 use Regression\LogarithmicRegression;
+use Regression\PowerRegression;
 use Regression\RegressionFactory;
 use Regression\RegressionModel;
 
@@ -51,4 +52,16 @@ $regressionModel = $logarithmic->getRegressionModel();
 
 $regressionModel = RegressionFactory::Logarithmic($testData);
 
-var_dump(RegressionFactory::Power($testData));
+/**
+ * Calculate power regression call calculate()
+ */
+$powerReg = new PowerRegression();
+$powerReg->setSourceSequence($testData);
+$powerReg->calculate();
+
+/** @var RegressionModel $regressionModel */
+$regressionModel = $powerReg->getRegressionModel();
+
+$regressionModel = RegressionFactory::Power($testData);
+
+//var_dump(RegressionFactory::Power($testData));
