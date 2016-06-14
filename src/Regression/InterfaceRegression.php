@@ -10,18 +10,18 @@ namespace Regression;
 interface InterfaceRegression
 {
 	
-	public function calculate();
+    public function calculate();
 
-	/**
-	 * @param array $data
-	 *
-	 * @return array
-	 */
-	public function setSourceSequence(array $data);
+    /**
+     * @param array $data
+     *
+     * @return array
+     */
+    public function setSourceSequence(array $data);
 
-	/**
-	 * @return RegressionModel
-	 */
-	public function getRegressionModel(): RegressionModel;
+    /**
+     * @return RegressionModel
+     */
+    public function getRegressionModel(): RegressionModel;
 
 }
