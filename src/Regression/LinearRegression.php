@@ -3,8 +3,6 @@ declare(strict_types = 1);
 
 namespace Regression;
 
-use Carbon\Carbon;
-
 /**
  * Class LinearRegression
  * @package Regression
