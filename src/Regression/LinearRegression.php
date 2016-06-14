@@ -56,7 +56,7 @@ class LinearRegression extends AbstractRegression implements InterfaceRegression
             $this->resultSequence[] = $coordinate;
         }
 
-        $this->equation = 'y = ' .  round($gradient, 1) .  'x + ' . round($intercept, 1);
+        $this->equation = 'y = ' . round($gradient, 1) . 'x + ' . round($intercept, 1);
 
         $this->push();
     }
