@@ -18,7 +18,7 @@ abstract class AbstractRegression implements InterfaceRegression
     protected $sourceSequence;
 
     /**
-     * @var array
+     * @var string
      */
     protected $equation;
 
@@ -42,7 +42,7 @@ abstract class AbstractRegression implements InterfaceRegression
      */
     protected $dimension;
 
-    abstract function calculate();
+    abstract public function calculate();
 
     protected function push()
     {

@@ -33,8 +33,6 @@ class ExponentialRegression extends AbstractRegression implements InterfaceRegre
             throw new RegressionException('The dimension of the sequence of at least ' . $this->dimension);
         }
 
-        $k = 0;
-
         foreach ($this->sourceSequence as $k => $v) {
             if ($v[1] !== null) {
                 $this->sumIndex[0] += $v[0];

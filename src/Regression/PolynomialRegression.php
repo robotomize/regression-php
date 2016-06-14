@@ -2,7 +2,11 @@
 
 namespace Regression;
 
-
+/**
+ * Class PolynomialRegression
+ * @package Regression
+ * @author robotomzie@gmail.com
+ */
 class PolynomialRegression extends AbstractRegression
 {
 
