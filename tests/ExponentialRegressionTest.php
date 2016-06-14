@@ -11,7 +11,7 @@ class ExponentialRegressionTest extends PHPUnit_Framework_TestCase
      * @var array
      */
     private $testData;
-    
+
 
     public function setUp()
     {
@@ -25,7 +25,7 @@ class ExponentialRegressionTest extends PHPUnit_Framework_TestCase
         $this->testData = null;
     }
 
-    public function testExponentialRegression()
+    public function testCalculate()
     {
         return false;
     }

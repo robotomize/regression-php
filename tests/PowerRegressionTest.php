@@ -25,7 +25,7 @@ class PowerRegressionTest extends PHPUnit_Framework_TestCase
         $this->testData = null;
     }
 
-    public function testPowerRegression()
+    public function testCalculate()
     {
         return false;
     }

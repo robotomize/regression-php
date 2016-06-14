@@ -31,7 +31,7 @@ class LinearRegressionTest extends PHPUnit_Framework_TestCase
 		$this->testData = null;
 	}
 
-	public function testLinearRegression()
+	public function testCalculate()
 	{
 		return false;
 	}

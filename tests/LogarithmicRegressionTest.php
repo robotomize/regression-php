@@ -24,7 +24,7 @@ class LogarithmicRegressionTest extends PHPUnit_Framework_TestCase
         $this->testData = null;
     }
 
-    public function testLogarithmicRegression()
+    public function testCalculate()
     {
         return false;
     }
