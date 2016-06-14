@@ -47,7 +47,7 @@ class PowerRegression extends AbstractRegression implements InterfaceRegression
         $B = ($k * $this->sumIndex[1] - $this->sumIndex[2] * $this->sumIndex[0])
                 / ($k * $this->sumIndex[3] - $this->sumIndex[0] * $this->sumIndex[0]);
 
-        $A = exp(($this->sumIndex[2] - $B * $this->sumIndex[0])/ $k);
+        $A = exp(($this->sumIndex[2] - $B * $this->sumIndex[0]) / $k);
 
         foreach ($this->sourceSequence as $i => $val) {
             $coordinate = [$val[0], $A * exp($B * $val[0])];

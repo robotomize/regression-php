@@ -55,14 +55,12 @@ class Math
     }
 
     /**
-     * The coefficient of determination
-     *
      * @param array $rightData
      * @param array $hypothesisData
-     * @return int
+     * @return float
      * @throws IllegalArgumentException
      */
-    public static function r2(array $rightData, array $hypothesisData)
+    public static function r2(array $rightData, array $hypothesisData):float
     {
         return 1 - self::mse($rightData, $hypothesisData) / self::tss($rightData);
     }
@@ -133,7 +131,7 @@ class Math
      */
     public static function mpe(array $rightData, array $hypothesisData): float
     {
-        return 1 - self::mape($rightData, $scoreHypothesis);
+        return 1 - self::mape($rightData, $hypothesisData);
     }
 
     /**

@@ -58,7 +58,7 @@ class ExponentialRegression extends AbstractRegression implements InterfaceRegre
 			$this->resultSequence[] = $coordinate;
 		}
 
-		$this->equation = 'y = ' .  round($A, 2) .  '+ e^(' . round($B, 2) . 'x)';
+		$this->equation = 'y = ' . round($A, 2) . '+ e^(' . round($B, 2) . 'x)';
 
 		$this->push();
 	}

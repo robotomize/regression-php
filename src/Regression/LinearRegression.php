@@ -4,8 +4,6 @@ declare(strict_types = 1);
 namespace Regression;
 
 use Carbon\Carbon;
-use Exception;
-use IllegalArgumentException;
 
 /**
  * Class LinearRegression
