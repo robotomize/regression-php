@@ -20,7 +20,7 @@ Basic usage
 $testData = [[0, 10], [1, 20], [2, 3], [3, 15], [4, 0]]
 $linear = new LinearRegression();
 $linear->setSourceSequence($testData);
-$linear->make();
+$linear->calculate();
 
 /** @var RegressionModel $regressionModel */
 $regressionModel = $linear->getRegressionModel();
@@ -40,7 +40,7 @@ Basic usage
 ```php
 $exponential = new ExponentialRegression();
 $exponential->setSourceSequence($testData);
-$exponential->make();
+$exponential->calculate();
 $regressionModel = $exponential->getRegressionModel();
 ```
 
