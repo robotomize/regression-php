@@ -4,7 +4,15 @@ namespace test;
 
 
 use PHPUnit_Framework_TestCase;
+use Regression\LogarithmicRegression;
+use Regression\RegressionException;
+use Regression\RegressionModel;
 
+/**
+ * Class LogarithmicRegressionTest
+ * @package test
+ * @author robotomize@gmail.com
+ */
 class LogarithmicRegressionTest extends PHPUnit_Framework_TestCase
 {
     /**
@@ -12,6 +20,9 @@ class LogarithmicRegressionTest extends PHPUnit_Framework_TestCase
      */
     private $testData;
 
+    /**
+     *
+     */
     public function setUp()
     {
         $this->testData = [
@@ -19,13 +30,29 @@ class LogarithmicRegressionTest extends PHPUnit_Framework_TestCase
         ];
     }
 
+    /**
+     *
+     */
     public function tearDown()
     {
         $this->testData = null;
     }
 
+    /**
+     * @throws RegressionException
+     */
     public function testCalculate()
     {
-        return false;
+        $linear = new LogarithmicRegression();
+        $linear->setSourceSequence($this->testData);
+        $linear->calculate();
+
+        /** @var RegressionModel $regressionModel */
+        $regressionModel = $linear->getRegressionModel();
+
+        $this->assertEquals('y = -320.03 + 504.51 ln(x)',  $regressionModel->getEquation());
+        $this->assertEquals(842, round($regressionModel->getResultSequence()[9][1]));
+        $this->assertEquals(788, round($regressionModel->getResultSequence()[8][1]));
+        $this->assertEquals(729, round($regressionModel->getResultSequence()[7][1]));
     }
 }

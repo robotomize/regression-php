@@ -34,7 +34,6 @@ class LogarithmicRegression extends AbstractRegression implements InterfaceRegre
         foreach ($this->sourceSequence as $k => $v) {
             if ($v[1] !== null) {
                 $this->sumIndex[0] += log($v[0]);
-                print $v[0];
                 $this->sumIndex[1] += $v[1] * log($v[0]);
                 $this->sumIndex[2] += $v[1];
                 $this->sumIndex[3] += pow(log($v[0]), 2);

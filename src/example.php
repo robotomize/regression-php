@@ -28,7 +28,6 @@ $regressionModel = $linear->getRegressionModel();
 /** @var RegressionModel $regressionModel */
 $regressionModel = RegressionFactory::Linear($testData);
 
-
 /**
  * Calculate Exponential regression call calculate()
  */
@@ -63,5 +62,5 @@ $powerReg->calculate();
 $regressionModel = $powerReg->getRegressionModel();
 
 $regressionModel = RegressionFactory::Power($testData);
-
+var_dump($regressionModel);
 //var_dump(RegressionFactory::Power($testData));

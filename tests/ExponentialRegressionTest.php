@@ -4,7 +4,15 @@ namespace test;
 
 
 use PHPUnit_Framework_TestCase;
+use Regression\ExponentialRegression;
+use Regression\RegressionException;
+use Regression\RegressionModel;
 
+/**
+ * Class ExponentialRegressionTest
+ * @package test
+ * @author robotomize@gmail.com
+ */
 class ExponentialRegressionTest extends PHPUnit_Framework_TestCase
 {
     /**
@@ -12,7 +20,9 @@ class ExponentialRegressionTest extends PHPUnit_Framework_TestCase
      */
     private $testData;
 
-
+    /**
+     *
+     */
     public function setUp()
     {
         $this->testData = [
@@ -20,13 +30,29 @@ class ExponentialRegressionTest extends PHPUnit_Framework_TestCase
         ];
     }
 
+    /**
+     *
+     */
     public function tearDown()
     {
         $this->testData = null;
     }
 
+    /**
+     * @throws RegressionException
+     */
     public function testCalculate()
     {
-        return false;
+        $linear = new ExponentialRegression();
+        $linear->setSourceSequence($this->testData);
+        $linear->calculate();
+
+        /** @var RegressionModel $regressionModel */
+        $regressionModel = $linear->getRegressionModel();
+
+        $this->assertEquals('y = 30.2+ e^(0.39x)',  $regressionModel->getEquation());
+        $this->assertEquals(1470, round($regressionModel->getResultSequence()[9][1]));
+        $this->assertEquals(997, round($regressionModel->getResultSequence()[8][1]));
+        $this->assertEquals(676, round($regressionModel->getResultSequence()[7][1]));
     }
 }

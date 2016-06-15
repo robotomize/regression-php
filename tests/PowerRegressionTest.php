@@ -1,11 +1,17 @@
 <?php
 
-
 namespace test;
 
-
 use PHPUnit_Framework_TestCase;
+use Regression\PowerRegression;
+use Regression\RegressionException;
+use Regression\RegressionModel;
 
+/**
+ * Class PowerRegressionTest
+ * @package test
+ * @author robotomize@gmail.com
+ */
 class PowerRegressionTest extends PHPUnit_Framework_TestCase
 {
     /**
@@ -13,6 +19,9 @@ class PowerRegressionTest extends PHPUnit_Framework_TestCase
      */
     private $testData;
 
+    /**
+     *
+     */
     public function setUp()
     {
         $this->testData = [
@@ -20,13 +29,29 @@ class PowerRegressionTest extends PHPUnit_Framework_TestCase
         ];
     }
 
+    /**
+     *
+     */
     public function tearDown()
     {
         $this->testData = null;
     }
 
+    /**
+     * @throws RegressionException
+     */
     public function testCalculate()
     {
-        return false;
+        $linear = new PowerRegression();
+        $linear->setSourceSequence($this->testData);
+        $linear->calculate();
+
+        /** @var RegressionModel $regressionModel */
+        $regressionModel = $linear->getRegressionModel();
+
+        $this->assertEquals('y = 7.52+ x^2.18',  $regressionModel->getEquation());
+        $this->assertEquals(1126, round($regressionModel->getResultSequence()[9][1]));
+        $this->assertEquals(895, round($regressionModel->getResultSequence()[8][1]));
+        $this->assertEquals(693, round($regressionModel->getResultSequence()[7][1]));
     }
 }
