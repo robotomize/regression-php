@@ -10,7 +10,6 @@ namespace Regression;
 class PolynomialRegression extends AbstractRegression
 {
 
-
     /**
      * PolynomialRegression constructor.
      */
