@@ -1,4 +1,9 @@
 ## Regression-php package
+[![Latest Stable Version](https://poser.pugx.org/robotomize/regression-php/v/stable)](https://packagist.org/packages/robotomize/regression-php)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/robotomize/regression-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/robotomize/regression-php/?branch=master)
+[![Build Status](https://travis-ci.org/robotomize/regression-php.svg?branch=master)](https://travis-ci.org/robotomize/regression-php/)
+[![Total Downloads](https://poser.pugx.org/robotomize/regression-php/downloads)](https://packagist.org/packages/robotomize/regression-php)
+[![License](https://poser.pugx.org/robotomize/regression-php/license)](https://packagist.org/packages/robotomize/regression-php)
 
 Implementation of the regression algorithm
 
