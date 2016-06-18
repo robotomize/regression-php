@@ -5,8 +5,9 @@ namespace Regression;
 
 /**
  * Class LinearRegression
+ *
  * @package Regression
- * @author robotomize@gmail.com
+ * @author  robotomize@gmail.com
  */
 class LinearRegression extends AbstractRegression implements InterfaceRegression
 {
@@ -48,7 +49,7 @@ class LinearRegression extends AbstractRegression implements InterfaceRegression
 
         $gradient = ($k * $this->sumIndex[3] - $this->sumIndex[0] * $this->sumIndex[1]) /
             ($k * $this->sumIndex[2] - $this->sumIndex[0] * $this->sumIndex[0]);
-		
+        
         $intercept = $this->sumIndex[1] / $k - $gradient * $this->sumIndex[0] / $k;
 
         foreach ($this->sourceSequence as $i => $val) {

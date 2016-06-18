@@ -1,6 +1,6 @@
 <?php
 
-namespace test;
+namespace Test;
 
 use PHPUnit_Framework_TestCase;
 use Regression\PowerRegression;
@@ -9,7 +9,7 @@ use Regression\RegressionModel;
 
 /**
  * Class PowerRegressionTest
- * @package test
+ * @package Test
  * @author robotomize@gmail.com
  */
 class PowerRegressionTest extends PHPUnit_Framework_TestCase

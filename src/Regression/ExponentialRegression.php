@@ -5,8 +5,9 @@ namespace Regression;
 
 /**
  * Class ExponentialRegression
+ *
  * @package Regression
- * @author robotomize@gmail.com
+ * @author  robotomize@gmail.com
  */
 class ExponentialRegression extends AbstractRegression implements InterfaceRegression
 {

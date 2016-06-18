@@ -4,8 +4,9 @@ namespace Regression;
 
 /**
  * Class PowerRegression
+ *
  * @package Regression
- * @author robotomoze@gmail.com
+ * @author  robotomoze@gmail.com
  */
 class PowerRegression extends AbstractRegression implements InterfaceRegression
 {

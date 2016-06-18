@@ -26,7 +26,7 @@ $regressionModel = $linear->getRegressionModel();
  * Calculate with Fabric method
  */
 /** @var RegressionModel $regressionModel */
-$regressionModel = RegressionFactory::Linear($testData);
+$regressionModel = RegressionFactory::linear($testData);
 
 /**
  * Calculate Exponential regression call calculate()
@@ -49,7 +49,7 @@ $logarithmic->calculate();
 /** @var RegressionModel $regressionModel */
 $regressionModel = $logarithmic->getRegressionModel();
 
-$regressionModel = RegressionFactory::Logarithmic($testData);
+$regressionModel = RegressionFactory::logarithmic($testData);
 
 /**
  * Calculate power regression call calculate()
@@ -61,6 +61,6 @@ $powerReg->calculate();
 /** @var RegressionModel $regressionModel */
 $regressionModel = $powerReg->getRegressionModel();
 
-$regressionModel = RegressionFactory::Power($testData);
+$regressionModel = RegressionFactory::power($testData);
 var_dump($regressionModel);
 //var_dump(RegressionFactory::Power($testData));

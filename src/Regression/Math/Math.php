@@ -1,13 +1,14 @@
 <?php
 
-namespace Regression\Math;
+namespace robotomize\regression\Math;
 
 use IllegalArgumentException;
 
 /**
  * Class Math
+ *
  * @package Regression\Math
- * @author robotomize@sgmail.com
+ * @author  robotomize@sgmail.com
  */
 class Math
 {
@@ -17,8 +18,8 @@ class Math
     /**
      * The quadratic mean square error
      *
-     * @param array $rightData
-     * @param array $hypothesisData
+     * @param  array $rightData
+     * @param  array $hypothesisData
      * @return float
      * @throws IllegalArgumentException
      */
@@ -40,7 +41,7 @@ class Math
     /**
      * Total Sum of Squares
      *
-     * @param array $rightData
+     * @param  array $rightData
      * @return float
      */
     public static function tss(array $rightData): float
@@ -68,8 +69,8 @@ class Math
     /**
      * Mean absolute percentage error
      *
-     * @param array $rightData
-     * @param array $hypothesisData
+     * @param  array $rightData
+     * @param  array $hypothesisData
      * @return float
      * @throws IllegalArgumentException
      */
@@ -90,8 +91,8 @@ class Math
     /**
      * Mean absolute error
      *
-     * @param array $rightData
-     * @param array $hypothesisData
+     * @param  array $rightData
+     * @param  array $hypothesisData
      * @return float
      * @throws IllegalArgumentException
      */
@@ -111,8 +112,9 @@ class Math
 
     /**
      * 1- mae
-     * @param array $rightData
-     * @param array $hypothesisData
+     *
+     * @param  array $rightData
+     * @param  array $hypothesisData
      * @return float
      * @throws IllegalArgumentException
      */
@@ -124,8 +126,8 @@ class Math
     /**
      * The accuracy of the forecast
      *
-     * @param array $rightData
-     * @param array $hypothesisData
+     * @param  array $rightData
+     * @param  array $hypothesisData
      * @return float
      * @throws IllegalArgumentException
      */
@@ -136,7 +138,8 @@ class Math
 
     /**
      * Moving Average
-     * @param array $vector
+     *
+     * @param  array $vector
      * @return array
      */
     public static function tripleMovingAverage(array $vector): array

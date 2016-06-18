@@ -1,6 +1,6 @@
 <?php
 
-namespace test;
+namespace Test;
 
 
 use PHPUnit_Framework_TestCase;
@@ -10,7 +10,7 @@ use Regression\RegressionModel;
 
 /**
  * Class LogarithmicRegressionTest
- * @package test
+ * @package Test
  * @author robotomize@gmail.com
  */
 class LogarithmicRegressionTest extends PHPUnit_Framework_TestCase
