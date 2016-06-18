@@ -8,9 +8,7 @@ Implementation of the regression algorithm
 
 ## Install
 ```sh
-git clone https://github.com/robotomize/regression-php.git
-cd regression-php;
-php src/example.php
+composer require robotomize/regression-php
 ```
 
 ### Linear regression algorithm
