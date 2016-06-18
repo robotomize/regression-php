@@ -1,6 +1,6 @@
 {
     "name": "robotomize/regression-php",
-    "description": "Nacho, nacho man. I want to be a nacho man",
+    "description": "Calculates regression",
     "license": "MIT",
     "keywords": ["regression", "linear", "math", "forecast"],
     "authors": [
