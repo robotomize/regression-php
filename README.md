@@ -4,9 +4,10 @@
 [![Build Status](https://travis-ci.org/robotomize/regression-php.svg?branch=master)](https://travis-ci.org/robotomize/regression-php/)
 [![Total Downloads](https://poser.pugx.org/robotomize/regression-php/downloads)](https://packagist.org/packages/robotomize/regression-php)
 [![License](https://poser.pugx.org/robotomize/regression-php/license)](https://packagist.org/packages/robotomize/regression-php)
-
-Implementation of the regression algorithm. 
-Other methods in development
+## Description
+* Implementation of model building for regression
+* New models of regression in the development
+* There will be a separate thread for php 5.6
 
 ## Requirements
 * composer dependency (Carbon DateTime)
