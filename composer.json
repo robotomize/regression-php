@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Calculates regression",
     "license": "MIT",
-    "keywords": ["regression", "linear", "math", "forecast"],
+    "keywords": ["regression", "linear", "exponential", "power", "math", "forecast"],
     "authors": [
         {
             "name": "robotomize",
@@ -11,6 +11,7 @@
         }
     ],
     "require": {
+        "php": "^7.0",
         "nesbot/carbon": "^1.21"
     },
     "require-dev": {
