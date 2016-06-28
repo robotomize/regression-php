@@ -5,7 +5,8 @@
 [![Total Downloads](https://poser.pugx.org/robotomize/regression-php/downloads)](https://packagist.org/packages/robotomize/regression-php)
 [![License](https://poser.pugx.org/robotomize/regression-php/license)](https://packagist.org/packages/robotomize/regression-php)
 
-Implementation of the regression algorithm
+Implementation of the regression algorithm. 
+Other methods in development
 
 ## Requirements
 * composer dependency (Carbon DateTime)
