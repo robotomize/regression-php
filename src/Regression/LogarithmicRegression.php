@@ -4,8 +4,9 @@ namespace Regression;
 
 /**
  * Class LogarithmicRegression
+ *
  * @package Regression
- * @author robotomize@gmail.com
+ * @author  robotomize@gmail.com
  */
 class LogarithmicRegression extends AbstractRegression implements InterfaceRegression
 {

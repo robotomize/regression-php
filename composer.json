@@ -1,8 +1,9 @@
 {
-    "name": "robotomize/regression-php",
-    "description": "Nacho, nacho man. I want to be a nacho man",
+    "name": "robotomize/regression",
+    "type": "library",
+    "description": "Calculates regression",
     "license": "MIT",
-    "keywords": ["regression", "linear", "math", "forecast"],
+    "keywords": ["regression", "linear", "exponential", "power", "math", "forecast"],
     "authors": [
         {
             "name": "robotomize",
@@ -10,10 +11,13 @@
         }
     ],
     "require": {
+        "php": "^7.0",
         "nesbot/carbon": "^1.21"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.0|~5.0"
+        "phpunit/phpunit": "~4.0|~5.0",
+        "squizlabs/php_codesniffer": "2.*",
+        "phpmd/phpmd": "2.*"
     },
     "autoload": {
         "psr-4": {
@@ -22,7 +26,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "test\\": "tests/"
+            "Test\\": "tests/"
         }
     }
 }

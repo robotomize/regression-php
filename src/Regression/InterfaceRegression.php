@@ -4,12 +4,13 @@ namespace Regression;
 
 /**
  * Interface InterfaceRegression
+ *
  * @package Regerssion
- * @author robotomize@gmail.com
+ * @author  robotomize@gmail.com
  */
 interface InterfaceRegression
 {
-	
+    
     public function calculate();
 
     /**

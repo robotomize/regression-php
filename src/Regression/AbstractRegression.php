@@ -6,8 +6,9 @@ use Carbon\Carbon;
 
 /**
  * Class AbstractRegression
+ *
  * @package Regression
- * @author robotomize@gmail.com
+ * @author  robotomize@gmail.com
  */
 abstract class AbstractRegression implements InterfaceRegression
 {

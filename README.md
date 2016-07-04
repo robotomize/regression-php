@@ -1,6 +1,13 @@
 ## Regression-php package
-
-Implementation of the regression algorithm
+[![Latest Stable Version](https://poser.pugx.org/robotomize/regression-php/v/stable)](https://packagist.org/packages/robotomize/regression-php)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/robotomize/regression-php/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/robotomize/regression-php/?branch=master)
+[![Build Status](https://travis-ci.org/robotomize/regression-php.svg?branch=master)](https://travis-ci.org/robotomize/regression-php/)
+[![Total Downloads](https://poser.pugx.org/robotomize/regression-php/downloads)](https://packagist.org/packages/robotomize/regression-php)
+[![License](https://poser.pugx.org/robotomize/regression-php/license)](https://packagist.org/packages/robotomize/regression-php)
+## Description
+* Implementation of model building for regression
+* New models of regression in the development
+* There will be a separate thread for php 5.6
 
 ## Requirements
 * composer dependency (Carbon DateTime)
@@ -8,9 +15,7 @@ Implementation of the regression algorithm
 
 ## Install
 ```sh
-git clone https://github.com/robotomize/regression-php.git
-cd regression-php;
-php src/example.php
+composer require robotomize/regression-php
 ```
 
 ### Linear regression algorithm

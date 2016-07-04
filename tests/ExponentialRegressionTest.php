@@ -1,6 +1,6 @@
 <?php
 
-namespace test;
+namespace Test;
 
 
 use PHPUnit_Framework_TestCase;
@@ -10,7 +10,7 @@ use Regression\RegressionModel;
 
 /**
  * Class ExponentialRegressionTest
- * @package test
+ * @package Test
  * @author robotomize@gmail.com
  */
 class ExponentialRegressionTest extends PHPUnit_Framework_TestCase

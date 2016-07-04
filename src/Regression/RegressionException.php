@@ -6,9 +6,9 @@ use Exception;
 
 /**
  * Class RegressionException
- * @package Regression
- * @author robotomize@gmail.com
  *
+ * @package Regression
+ * @author  robotomize@gmail.com
  */
 class RegressionException extends Exception
 {

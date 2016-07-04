@@ -1,6 +1,6 @@
 <?php
 
-namespace test;
+namespace Test;
 
 use PHPUnit_Framework_TestCase;
 use Regression\LinearRegression;
@@ -9,7 +9,7 @@ use Regression\RegressionModel;
 
 /**
  * Class LinearRegressionTest
- * @package test
+ * @package Test
  * @author robotomize@gmail.com
  */
 class LinearRegressionTest extends PHPUnit_Framework_TestCase
