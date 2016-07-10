@@ -23,6 +23,6 @@ interface InterfaceRegression
     /**
      * @return RegressionModel
      */
-    public function getRegressionModel();
+    public function getRegressionModel(): RegressionModel;
 
 }

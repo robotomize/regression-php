@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Regression;
 
@@ -38,7 +39,7 @@ class RegressionModel
     /**
      * @return string
      */
-    public function getObjectId()
+    public function getObjectId(): string
     {
         return $this->objectId;
     }
@@ -46,7 +47,7 @@ class RegressionModel
     /**
      * @param string $objectId
      */
-    public function setObjectId($objectId)
+    public function setObjectId(string $objectId)
     {
         $this->objectId = $objectId;
     }
@@ -54,7 +55,7 @@ class RegressionModel
     /**
      * @return array
      */
-    public function getResultSequence()
+    public function getResultSequence(): array
     {
         return $this->resultSequence;
     }
@@ -70,7 +71,7 @@ class RegressionModel
     /**
      * @return array
      */
-    public function getSourceSequence()
+    public function getSourceSequence(): array
     {
         return $this->sourceSequence;
     }
@@ -86,7 +87,7 @@ class RegressionModel
     /**
      * @return string
      */
-    public function getEquation()
+    public function getEquation(): string
     {
         return $this->equation;
     }
@@ -94,7 +95,7 @@ class RegressionModel
     /**
      * @param string $equation
      */
-    public function setEquation($equation)
+    public function setEquation(string $equation)
     {
         $this->equation = $equation;
     }
@@ -102,7 +103,7 @@ class RegressionModel
     /**
      * @return string
      */
-    public function getCreateDate()
+    public function getCreateDate(): string
     {
         return $this->createDate;
     }
@@ -110,7 +111,7 @@ class RegressionModel
     /**
      * @param string $createDate
      */
-    public function setCreateDate($createDate)
+    public function setCreateDate(string $createDate)
     {
         $this->createDate = $createDate;
     }
