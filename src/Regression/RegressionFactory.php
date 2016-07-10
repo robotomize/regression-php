@@ -1,9 +1,8 @@
 <?php
-declare(strict_types = 1);
 
 namespace Regression;
+use Regression\TypeError;
 
-use TypeError;
 
 /**
  * Class RegressionFactory
@@ -18,7 +17,7 @@ class RegressionFactory
      * @return RegressionModel
      * @throws TypeError
      */
-    public static function linear(array $data): RegressionModel
+    public static function linear(array $data)
     {
         return self::createContainer(LinearRegression::class, $data);
     }
@@ -28,7 +27,7 @@ class RegressionFactory
      * @return RegressionModel
      * @throws TypeError
      */
-    public static function exponential(array $data): RegressionModel
+    public static function exponential(array $data)
     {
         return self::createContainer(ExponentialRegression::class, $data);
     }
@@ -48,7 +47,7 @@ class RegressionFactory
      * @return RegressionModel
      * @throws TypeError
      */
-    public static function power(array $data): RegressionModel
+    public static function power(array $data)
     {
         return self::createContainer(PowerRegression::class, $data);
     }
@@ -59,7 +58,7 @@ class RegressionFactory
      * @return InterfaceRegression
      * @throws TypeError
      */
-    protected static function createContainer(string $className, array $data): RegressionModel
+    protected static function createContainer($className, array $data)
     {
         /**
         * @var InterfaceRegression $regressionObj

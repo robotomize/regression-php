@@ -66,7 +66,7 @@ abstract class AbstractRegression implements InterfaceRegression
     /**
      * @return string
      */
-    public function getEquation(): string
+    public function getEquation()
     {
         return $this->equation;
     }
@@ -74,7 +74,7 @@ abstract class AbstractRegression implements InterfaceRegression
     /**
      * @return RegressionModel
      */
-    public function getRegressionModel(): RegressionModel
+    public function getRegressionModel()
     {
         return $this->regressionModel;
     }
@@ -82,7 +82,7 @@ abstract class AbstractRegression implements InterfaceRegression
     /**
      * @return array
      */
-    public function getSourceSequence(): array
+    public function getSourceSequence()
     {
         return $this->sourceSequence;
     }
