@@ -10,13 +10,19 @@
 * There will be a separate thread for php 5.6
 
 ## Requirements
-* composer dependency (Carbon DateTime)
-* PHP7
+* composer dependency (Carbon DateTime, random-bytes)
+* PHP 5.6-7
 
 ## Install
 ```sh
 composer require robotomize/regression-php
 ```
+
+### Branches
+
+* Under php7 branch 0.24, develop branch
+* Use the branch with the syntax php7, you can clone the repository or view the 0.24 branch
+
 
 ### Linear regression algorithm
 
