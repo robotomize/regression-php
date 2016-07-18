@@ -1,5 +1,5 @@
 {
-    "name": "robotomize/regression",
+    "name": "robotomize/regression-php",
     "type": "library",
     "description": "Calculates regression",
     "license": "MIT",
