@@ -29,7 +29,7 @@ class PowerRegression extends AbstractRegression implements InterfaceRegression
         }
 
         if (count($this->sourceSequence) < $this->dimension) {
-            throw new RegressionException('The dimension of the sequence of at least ' . $this->dimension);
+            throw new RegressionException(sprintf('The dimension of the sequence of at least %s', $this->dimension));
         }
 
         $k = 0;
@@ -54,7 +54,7 @@ class PowerRegression extends AbstractRegression implements InterfaceRegression
             $this->resultSequence[] = $coordinate;
         }
 
-        $this->equation = 'y = ' . round($A, 2) . '+ x^' . round($B, 2);
+        $this->equation = sprintf('y = %s + x^%s', round($A, 2), round($B, 2));
 
         $this->push();
     }

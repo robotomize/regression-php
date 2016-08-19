@@ -30,7 +30,7 @@ class ExponentialRegression extends AbstractRegression implements InterfaceRegre
         }
 
         if (count($this->sourceSequence) < $this->dimension) {
-            throw new RegressionException('The dimension of the sequence of at least ' . $this->dimension);
+            throw new RegressionException(sprintf('The dimension of the sequence of at least %s', $this->dimension));
         }
 
         foreach ($this->sourceSequence as $k => $v) {
@@ -54,7 +54,7 @@ class ExponentialRegression extends AbstractRegression implements InterfaceRegre
             $this->resultSequence[] = $coordinate;
         }
 
-        $this->equation = 'y = ' . round($A, 2) . '+ e^(' . round($B, 2) . 'x)';
+        $this->equation = sprintf('y = %s+ e^(%sx)', round($A, 2), round($B, 2));
 
         $this->push();
     }

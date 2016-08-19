@@ -49,7 +49,7 @@ class PowerRegressionTest extends PHPUnit_Framework_TestCase
         /** @var RegressionModel $regressionModel */
         $regressionModel = $linear->getRegressionModel();
 
-        $this->assertEquals('y = 7.52+ x^2.18',  $regressionModel->getEquation());
+        $this->assertEquals('y = 7.52 + x^2.18',  $regressionModel->getEquation());
         $this->assertEquals(1126, round($regressionModel->getResultSequence()[9][1]));
         $this->assertEquals(895, round($regressionModel->getResultSequence()[8][1]));
         $this->assertEquals(693, round($regressionModel->getResultSequence()[7][1]));

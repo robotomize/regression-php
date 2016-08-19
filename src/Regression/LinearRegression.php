@@ -29,7 +29,7 @@ class LinearRegression extends AbstractRegression implements InterfaceRegression
         }
 
         if (count($this->sourceSequence) < $this->dimension) {
-            throw new RegressionException('The dimension of the sequence of at least ' . $this->dimension);
+            throw new RegressionException(sprintf('The dimension of the sequence of at least %s', $this->dimension));
         }
 
         $k = 0;
@@ -56,7 +56,7 @@ class LinearRegression extends AbstractRegression implements InterfaceRegression
             $this->resultSequence[] = $coordinate;
         }
 
-        $this->equation = 'y = ' . round($gradient, 1) . 'x + ' . round($intercept, 1);
+        $this->equation = sprintf('y = %sx + %s', round($gradient, 1), round($intercept, 1));
 
         $this->push();
     }

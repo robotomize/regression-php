@@ -1,7 +1,6 @@
 <?php
 
 namespace Regression;
-use Regression\TypeError;
 
 
 /**
@@ -37,7 +36,7 @@ class RegressionFactory
      * @return RegressionModel
      * @throws TypeError
      */
-    public static function logarithmic(array $data): RegressionModel
+    public static function logarithmic(array $data)
     {
         return self::createContainer(LogarithmicRegression::class, $data);
     }
@@ -55,7 +54,7 @@ class RegressionFactory
     /**
      * @param string $className
      * @param array  $data
-     * @return InterfaceRegression
+     * @return RegressionModel
      * @throws TypeError
      */
     protected static function createContainer($className, array $data)
@@ -67,13 +66,17 @@ class RegressionFactory
 
         if (!$regressionObj instanceof InterfaceRegression) {
             throw new TypeError(
-                'the object' . $className .
-                '  is not compatible with the interface ' . InterfaceRegression::class
+                sprintf(
+                    'the object %s is not compatible with the interface %s',
+                    $className,
+                    InterfaceRegression::class
+                )
             );
         }
 
         $regressionObj->setSourceSequence($data);
         $regressionObj->calculate();
+
         return $regressionObj->getRegressionModel();
     }
 }

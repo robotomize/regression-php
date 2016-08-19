@@ -27,7 +27,7 @@ class LogarithmicRegression extends AbstractRegression implements InterfaceRegre
         }
 
         if (count($this->sourceSequence) < $this->dimension) {
-            throw new RegressionException('The dimension of the sequence of at least ' . $this->dimension);
+            throw new RegressionException(sprintf('The dimension of the sequence of at least %s', $this->dimension));
         }
 
         $k = 0;
@@ -53,7 +53,7 @@ class LogarithmicRegression extends AbstractRegression implements InterfaceRegre
             $this->resultSequence[] = $coordinate;
         }
 
-        $this->equation = 'y = ' . round($A, 2) . ' + ' . round($B, 2) . ' ln(x)';
+        $this->equation = sprintf('y = %s + %s ln(x)', round($A, 2), round($B, 2));
 
         $this->push();
     }
