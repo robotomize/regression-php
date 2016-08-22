@@ -53,7 +53,7 @@ class LogarithmicRegression extends AbstractRegression implements InterfaceRegre
             $this->resultSequence[] = $coordinate;
         }
 
-        $this->equation = sprintf('y = %s + %s ln(x)', round($A, 2), round($B, 2));
+        $this->equation = sprintf('y = %s + %sln(x)', round($A, 2), round($B, 2));
 
         $this->push();
     }

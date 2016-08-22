@@ -17,15 +17,21 @@ class PowerRegressionTest extends PHPUnit_Framework_TestCase
     /**
      * @var array
      */
-    private $testData;
+    private $rows;
 
     /**
      *
      */
     public function setUp()
     {
-        $this->testData = [
+        $this->rows = [
             [1, 10], [2, 30], [3, 68], [4, 130], [5, 222], [6, 350], [7, 520], [8, 738], [9, 1010], [10, 1342]
+        ];
+        /**
+         * Another dataSet
+         */
+        $this->rows[1] = [
+            [1, 11], [2, 13], [3, 13], [4, 14], [5, 16], [6, 16], [7, 13], [8, 13]
         ];
     }
 
@@ -34,7 +40,7 @@ class PowerRegressionTest extends PHPUnit_Framework_TestCase
      */
     public function tearDown()
     {
-        $this->testData = null;
+        $this->rows = null;
     }
 
     /**
@@ -43,7 +49,7 @@ class PowerRegressionTest extends PHPUnit_Framework_TestCase
     public function testCalculate()
     {
         $linear = new PowerRegression();
-        $linear->setSourceSequence($this->testData);
+        $linear->setSourceSequence($this->rows);
         $linear->calculate();
 
         /** @var RegressionModel $regressionModel */
