@@ -5,6 +5,7 @@ namespace Test;
 use PHPUnit_Framework_TestCase;
 use Regression\PowerRegression;
 use Regression\RegressionException;
+use Regression\RegressionFactory;
 use Regression\RegressionModel;
 
 /**
@@ -24,7 +25,7 @@ class PowerRegressionTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->rows = [
+        $this->rows[0] = [
             [1, 10], [2, 30], [3, 68], [4, 130], [5, 222], [6, 350], [7, 520], [8, 738], [9, 1010], [10, 1342]
         ];
         /**
@@ -49,7 +50,7 @@ class PowerRegressionTest extends PHPUnit_Framework_TestCase
     public function testCalculate()
     {
         $linear = new PowerRegression();
-        $linear->setSourceSequence($this->rows);
+        $linear->setSourceSequence($this->rows[0]);
         $linear->calculate();
 
         /** @var RegressionModel $regressionModel */
@@ -59,5 +60,11 @@ class PowerRegressionTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(1126, round($regressionModel->getResultSequence()[9][1]));
         $this->assertEquals(895, round($regressionModel->getResultSequence()[8][1]));
         $this->assertEquals(693, round($regressionModel->getResultSequence()[7][1]));
+
+        $regressionModel = RegressionFactory::power($this->rows[1]);
+        $this->assertEquals('y = 11.69 + x^0.11',  $regressionModel->getEquation());
+        $this->assertEquals(12, round($regressionModel->getResultSequence()[0][1]));
+        $this->assertEquals(13, round($regressionModel->getResultSequence()[1][1]));
+        $this->assertEquals(13, round($regressionModel->getResultSequence()[2][1]));
     }
 }
