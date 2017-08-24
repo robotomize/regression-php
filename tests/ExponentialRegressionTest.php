@@ -57,15 +57,15 @@ class ExponentialRegressionTest extends PHPUnit_Framework_TestCase
         /** @var RegressionModel $regressionModel */
         $regressionModel = $linear->getRegressionModel();
 
-        $this->assertEquals('y = 30.2+ e^(0.39x)',  $regressionModel->getEquation());
-        $this->assertEquals(1470, round($regressionModel->getResultSequence()[9][1]));
-        $this->assertEquals(997, round($regressionModel->getResultSequence()[8][1]));
-        $this->assertEquals(676, round($regressionModel->getResultSequence()[7][1]));
+        $this->assertEquals('y = 30.2+ e^(0.39x)', $regressionModel->getEquation());
+        $this->assertEquals(1470, \round($regressionModel->getResultSequence()[9][1]));
+        $this->assertEquals(997, \round($regressionModel->getResultSequence()[8][1]));
+        $this->assertEquals(676, \round($regressionModel->getResultSequence()[7][1]));
 
         $regressionModel = RegressionFactory::exponential($this->rows[1]);
-        $this->assertEquals('y = 12.36+ e^(0.02x)',  $regressionModel->getEquation());
-        $this->assertEquals(13, round($regressionModel->getResultSequence()[0][1]));
-        $this->assertEquals(13, round($regressionModel->getResultSequence()[1][1]));
-        $this->assertEquals(13, round($regressionModel->getResultSequence()[2][1]));
+        $this->assertEquals('y = 12.36+ e^(0.02x)', $regressionModel->getEquation());
+        $this->assertEquals(13, \round($regressionModel->getResultSequence()[0][1]));
+        $this->assertEquals(13, \round($regressionModel->getResultSequence()[1][1]));
+        $this->assertEquals(13, \round($regressionModel->getResultSequence()[2][1]));
     }
 }
