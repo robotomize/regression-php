@@ -10,7 +10,7 @@ use Regression\RegressionModel;
 require __DIR__ . '/src/autoload.php';
 require __DIR__ . '/vendor/autoload.php';
 
-$testData = [[1, 10], [2, 30], [3, 68], [4, 130], [5, 222], [6, 350], [7, 520], [8, 738], [9, 1010], [10, 1342]];
+$testData = [[1, 129], [2, 384], [3, 396], [4, 579], [5, 495], [6, 843], [7, 936], [8, 431], [9, 431], [10, 600], [11, 512], [12, 314], [13, 432], [14, 489], [15, 327], [16, 492], [17, 551], [18, 544], [19, 643], [20, 535]];
 
 /**
  * Calculate linear regression call calculate()
@@ -27,6 +27,8 @@ $regressionModel = $linear->getRegressionModel();
  */
 /** @var RegressionModel $regressionModel */
 $regressionModel = RegressionFactory::linear($testData);
+//var_dump($regressionModel);
+
 
 /**
  * Calculate Exponential regression call calculate()
@@ -38,7 +40,7 @@ $exponential->calculate();
  * And with Fabric method
  */
 $regressionModel = $exponential->getRegressionModel();
-
+//var_dump($regressionModel);
 /**
  * Calculate logarithmic regression call calculate()
  */
@@ -50,7 +52,7 @@ $logarithmic->calculate();
 $regressionModel = $logarithmic->getRegressionModel();
 
 $regressionModel = RegressionFactory::logarithmic($testData);
-
+var_dump($regressionModel);
 /**
  * Calculate power regression call calculate()
  */
@@ -62,5 +64,5 @@ $powerReg->calculate();
 $regressionModel = $powerReg->getRegressionModel();
 
 $regressionModel = RegressionFactory::power($testData);
-var_dump($regressionModel);
+//var_dump($regressionModel);
 //var_dump(RegressionFactory::Power($testData));

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 
 namespace Regression;
 
@@ -8,7 +9,7 @@ namespace Regression;
  * @package Regression
  * @author  robotomize@gmail.com
  */
-class LinearRegression extends AbstractRegression implements InterfaceRegression
+class LinearRegression extends AbstractRegression
 {
     /**
      * LinearRegression constructor.
@@ -16,7 +17,7 @@ class LinearRegression extends AbstractRegression implements InterfaceRegression
     public function __construct()
     {
         $this->sumIndex = [0, 0, 0, 0, 0, 0];
-        $this->dimension = count($this->sumIndex);
+        $this->dimension = \count($this->sumIndex);
     }
 
     /**
@@ -28,8 +29,8 @@ class LinearRegression extends AbstractRegression implements InterfaceRegression
             throw new RegressionException('The input sequence is not set');
         }
 
-        if (count($this->sourceSequence) < $this->dimension) {
-            throw new RegressionException(sprintf('The dimension of the sequence of at least %s', $this->dimension));
+        if (\count($this->sourceSequence) < $this->dimension) {
+            throw new RegressionException('The dimension of the sequence of at least ' . $this->dimension);
         }
 
         $k = 0;
@@ -44,7 +45,7 @@ class LinearRegression extends AbstractRegression implements InterfaceRegression
             }
         }
 
-        $k += 1;
+        ++$k;
 
         $gradient = ($k * $this->sumIndex[3] - $this->sumIndex[0] * $this->sumIndex[1]) /
             ($k * $this->sumIndex[2] - $this->sumIndex[0] * $this->sumIndex[0]);
@@ -56,7 +57,7 @@ class LinearRegression extends AbstractRegression implements InterfaceRegression
             $this->resultSequence[] = $coordinate;
         }
 
-        $this->equation = sprintf('y = %sx + %s', round($gradient, 1), round($intercept, 1));
+        $this->equation = 'y = ' . \round($gradient, 1) . 'x + ' . \round($intercept, 1);
 
         $this->push();
     }

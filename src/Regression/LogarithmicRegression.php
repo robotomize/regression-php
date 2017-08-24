@@ -17,7 +17,7 @@ class LogarithmicRegression extends AbstractRegression implements InterfaceRegre
     public function __construct()
     {
         $this->sumIndex = [0, 0, 0, 0];
-        $this->dimension = count($this->sumIndex);
+        $this->dimension = \count($this->sumIndex);
     }
 
     public function calculate()
@@ -26,22 +26,22 @@ class LogarithmicRegression extends AbstractRegression implements InterfaceRegre
             throw new RegressionException('The input sequence is not set');
         }
 
-        if (count($this->sourceSequence) < $this->dimension) {
-            throw new RegressionException(sprintf('The dimension of the sequence of at least %s', $this->dimension));
+        if (\count($this->sourceSequence) < $this->dimension) {
+            throw new RegressionException('The dimension of the sequence of at least ' . $this->dimension);
         }
 
         $k = 0;
 
         foreach ($this->sourceSequence as $k => $v) {
             if ($v[1] !== null) {
-                $this->sumIndex[0] += log($v[0]);
-                $this->sumIndex[1] += $v[1] * log($v[0]);
+                $this->sumIndex[0] += \log($v[0]);
+                $this->sumIndex[1] += $v[1] * \log($v[0]);
                 $this->sumIndex[2] += $v[1];
-                $this->sumIndex[3] += pow(log($v[0]), 2);
+                $this->sumIndex[3] += \pow(\log($v[0]), 2);
             }
         }
 
-        $k += 1;
+        ++$k;
 
         $B = ($k * $this->sumIndex[1] - $this->sumIndex[2] * $this->sumIndex[0])
             / ($k * $this->sumIndex[3] - $this->sumIndex[0] * $this->sumIndex[0]);
@@ -49,11 +49,11 @@ class LogarithmicRegression extends AbstractRegression implements InterfaceRegre
         $A = ($this->sumIndex[2] - $B * $this->sumIndex[0]) / $k;
 
         foreach ($this->sourceSequence as $i => $val) {
-            $coordinate = [$val[0], $A + $B * log($val[0])];
+            $coordinate = [$val[0], $A + $B * \log($val[0])];
             $this->resultSequence[] = $coordinate;
         }
 
-        $this->equation = sprintf('y = %s + %sln(x)', round($A, 2), round($B, 2));
+        $this->equation = 'y = ' . \round($A, 2) . ' + ' . \round($B, 2) . ' ln(x)';
 
         $this->push();
     }

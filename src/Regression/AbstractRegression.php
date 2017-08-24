@@ -49,7 +49,7 @@ abstract class AbstractRegression implements InterfaceRegression
     {
         $this->regressionModel = new RegressionModel();
         $this->regressionModel->setEquation($this->equation);
-        $this->regressionModel->setObjectId(bin2hex(random_bytes(10)));
+        $this->regressionModel->setObjectId(\bin2hex(random_bytes(10)));
         $this->regressionModel->setResultSequence($this->resultSequence);
         $this->regressionModel->setSourceSequence($this->sourceSequence);
         $this->regressionModel->setCreateDate(Carbon::now()->toDateTimeString());
